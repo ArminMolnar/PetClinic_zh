@@ -25,16 +25,8 @@ public class ListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
-
-        switch (req.getParameter("action")) {
-            case "back":
-                resp.sendRedirect("mainServlet");
-                break;
-            case "delete":
-                petRepository.delete(Long.parseLong(req.getParameter("petId")));
-                req.setAttribute("petList", petService.findAll());
-                req.getRequestDispatcher("petList.jsp").forward(req, resp);
-                break;
-        }
+        petRepository.delete(Long.parseLong(req.getParameter("petId")));
+        req.setAttribute("petList", petService.findAll());
+        req.getRequestDispatcher("petList.jsp").forward(req, resp);
     }
 }

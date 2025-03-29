@@ -22,19 +22,11 @@ public class AddPetServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
-
-        switch (req.getParameter("action")) {
-            case "save":
-                var name = req.getParameter("name");
-                var chipCode = req.getParameter("chipCode");
-                var address = req.getParameter("address");
-                var species = req.getParameter("species");
-                petRepository.save(new Pet(name, chipCode, address, species));
-                req.getRequestDispatcher("addPet.jsp").forward(req, resp);
-                break;
-            case "back":
-                resp.sendRedirect("mainServlet");
-                break;
-        }
+        var name = req.getParameter("name");
+        var chipCode = req.getParameter("chipCode");
+        var address = req.getParameter("address");
+        var species = req.getParameter("species");
+        petRepository.save(new Pet(name, chipCode, address, species));
+        resp.sendRedirect( req.getContextPath() + "/listServlet");
     }
 }

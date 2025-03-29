@@ -14,18 +14,4 @@ public class MainServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         req.getRequestDispatcher("mainPage.jsp").forward(req, resp);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        req.setCharacterEncoding("UTF-8");
-
-        switch (req.getParameter("action")) {
-            case "addPet":
-                resp.sendRedirect("addPetServlet");
-                break;
-            case "listPet":
-                resp.sendRedirect("listServlet");
-                break;
-        }
-    }
 }
