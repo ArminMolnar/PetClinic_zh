@@ -5,13 +5,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import mik.prog4.zh1.entity.Pet;
-import mik.prog4.zh1.repository.PetRepository;
+import mik.prog4.zh1.service.PetService;
 
 import java.io.IOException;
 
 public class AddPetServlet extends HttpServlet {
 
-    private static final PetRepository petRepository = PetRepository.getInstance();
+    private static final PetService petService = new PetService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -26,7 +26,7 @@ public class AddPetServlet extends HttpServlet {
         var chipCode = req.getParameter("chipCode");
         var address = req.getParameter("address");
         var species = req.getParameter("species");
-        petRepository.save(new Pet(name, chipCode, address, species));
+        petService.save(new Pet(name, chipCode, address, species));
         resp.sendRedirect( req.getContextPath() + "/listServlet");
     }
 }
