@@ -14,7 +14,6 @@ public class ListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        req.setCharacterEncoding("UTF-8");
         req.setAttribute("petList", petService.findAll());
         req.getRequestDispatcher("petList.jsp").forward(req, resp);
 
