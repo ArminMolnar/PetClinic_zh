@@ -1,7 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<t:page>
+<t:page title="Add new pet">
 
 <form method="post" action="addPetServlet">
 <table>
