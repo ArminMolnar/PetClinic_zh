@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class RequestListener implements ServletRequestListener {
 
-    private static Logger LOGGER = Logger.getLogger(RequestListener.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(RequestListener.class.getName());
 
     @Override
     public void requestInitialized(ServletRequestEvent servletRequestEvent) {
