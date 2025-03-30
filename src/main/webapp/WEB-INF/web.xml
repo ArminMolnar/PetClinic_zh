@@ -35,4 +35,14 @@
         <url-pattern>/addPetServlet</url-pattern>
     </servlet-mapping>
 
+    <listener>
+        <description>ProjectServletContextListener</description>
+        <listener-class>mik.prog4.zh1.listener.ProjectServletContextListener</listener-class>
+    </listener>
+
+    <listener>
+        <description>RequestListener</description>
+        <listener-class>mik.prog4.zh1.listener.RequestListener</listener-class>
+    </listener>
+
 </web-app>
