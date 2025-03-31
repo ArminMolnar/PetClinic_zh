@@ -33,7 +33,7 @@
 </table>
 <br>
 
-<button type="submit" name="action" value="save">Save</button>
+<button type="submit">Save</button>
     </form>
 
 </t:page>

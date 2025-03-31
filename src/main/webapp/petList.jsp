@@ -45,7 +45,7 @@
                 <td><g:globalIdTag pet="${pet}"/></td>
                 <td>
                     <form method="post" action="listServlet">
-                        <button type="submit" name="action" value="delete">Delete</button>
+                        <button type="submit">Delete</button>
                         <input type="hidden" name="petId" value="${pet.id}">
                     </form>
                 </td>
