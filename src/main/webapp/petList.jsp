@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="g" uri="/WEB-INF/tlds/globalIdentifier.tld" %>
 <t:page title="Pet list">
     <style>
         td{
@@ -17,6 +18,7 @@
             <td><h2>Chip code</h2></td>
             <td><h2>Address</h2></td>
             <td><h2>Species</h2></td>
+            <td><h2>Global identifier</h2></td>
             <td><h2>Action</h2></td>
         </tr>
         </thead>
@@ -38,6 +40,7 @@
                 <td>
                     <c:out value="${pet.species}"/>
                 </td>
+                <td><g:globalIdTag pet="${pet}"/></td>
                 <td>
                     <form method="post" action="listServlet">
                         <button type="submit" name="action" value="delete">Delete</button>
