@@ -23,6 +23,5 @@ public class GlobalIdentifierTag extends SimpleTagSupport {
             String globalIdentifier = String.valueOf(petService.getGlobalIdentifier(pet));
             out.println(String.format(globalIdentifier));
         }
-
     }
 }
