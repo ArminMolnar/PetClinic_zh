@@ -14,8 +14,7 @@ public class ListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        req.setAttribute("petList", petService.findAll());
-        req.getRequestDispatcher("petList.jsp").forward(req, resp);
+        displayList(req, resp);
 
     }
 
@@ -23,6 +22,10 @@ public class ListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
         petService.deletePet(Long.parseLong(req.getParameter("petId")));
+        displayList(req, resp);
+    }
+
+    private void displayList(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setAttribute("petList", petService.findAll());
         req.getRequestDispatcher("petList.jsp").forward(req, resp);
     }
